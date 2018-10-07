@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c6f40141-7f9b-48b0-9f9e-8622accb22b8" name="Default Changelist" comment="" />
+    <list default="true" id="c6f40141-7f9b-48b0-9f9e-8622accb22b8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Lol.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/men/brakh/kasiski/Kasiski$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/men/brakh/kasiski/Kasiski$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/men/brakh/kasiski/Kasiski.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/men/brakh/kasiski/Kasiski.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/men/brakh/kasiski/Lol.class" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -14,7 +21,7 @@
     <session id="-794161664">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="4" />
+          <entry key="project.closed" value="5" />
           <entry key="project.open.time.1" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.23" value="3" />
@@ -31,23 +38,23 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="1" />
-          <entry key="java" value="5" />
+          <entry key="java" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="1" />
-          <entry key="JAVA" value="5" />
+          <entry key="JAVA" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="6694" />
+          <entry key="java" value="7442" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="6694" />
+          <entry key="JAVA" value="7442" />
         </counts>
       </usages-collector>
     </session>
@@ -59,11 +66,11 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="271">
+              <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,13 +78,17 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Lol.java">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/KasiskiFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="20" column="38" selection-start-line="20" selection-start-column="38" selection-end-line="20" selection-end-column="38" />
+            <state relative-caret-position="226">
+              <caret line="120" column="51" lean-forward="true" selection-start-line="120" selection-start-column="51" selection-end-line="120" selection-end-column="51" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1563#1719#0" expanded="true" />
+                <element signature="e#1718#1719#0" expanded="true" />
+                <element signature="e#2977#3139#0" expanded="true" />
+                <element signature="e#3138#3139#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -112,13 +123,17 @@
       <find>System.</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Mem.java" />
         <option value="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Lol.java" />
-        <option value="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java" />
         <option value="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/ProgressivePair.java" />
+        <option value="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java" />
+        <option value="$PROJECT_DIR$/src/main/java/men/brakh/kasiski/KasiskiFrame.java" />
       </list>
     </option>
   </component>
@@ -135,12 +150,13 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="67" />
     <option name="y" value="27" />
     <option name="width" value="1582" />
     <option name="height" value="876" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -195,7 +211,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538906947548" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1538910437483" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../rail-fence" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -212,7 +228,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.KasiskiFrame">
     <configuration name="Kasiski" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="men.brakh.kasiski.Kasiski" />
       <module name="kasiski" />
@@ -226,8 +242,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="KasiskiFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="men.brakh.kasiski.KasiskiFrame" />
+      <module name="kasiski" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="men.brakh.kasiski.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Kasiski" />
+      <item itemvalue="Application.KasiskiFrame" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.KasiskiFrame" />
         <item itemvalue="Application.Kasiski" />
       </list>
     </recent_temporary>
@@ -254,18 +288,18 @@
       <workItem from="1538493596388" duration="1158000" />
       <workItem from="1538504318419" duration="332000" />
       <workItem from="1538504818858" duration="53000" />
-      <workItem from="1538859876724" duration="8834000" />
+      <workItem from="1538859876724" duration="12318000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64898000" />
+    <option name="totallyTimeSpent" value="68382000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="27" width="1582" height="876" extended-state="0" />
+    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.3372396" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28666297" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -274,7 +308,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.48372397" visible="true" weight="0.46390375" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4831212" weight="0.37513512" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.48920864" weight="0.399137" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -282,8 +316,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.51627606" side_tool="true" visible="true" weight="0.46390375" />
-      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49584946" weight="0.32901832" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5168788" side_tool="true" visible="true" weight="0.37513512" />
+      <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49529606" weight="0.32864866" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -306,7 +340,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java</url>
-          <line>143</line>
+          <line>147</line>
           <properties />
           <option name="timeStamp" value="41" />
         </line-breakpoint>
@@ -326,9 +360,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Mem.java" />
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Lol.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
@@ -352,12 +383,29 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/Kasiski.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="271">
+          <caret line="151" column="21" selection-start-line="151" selection-start-column="21" selection-end-line="151" selection-end-column="21" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/men/brakh/kasiski/KasiskiFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="120" column="51" lean-forward="true" selection-start-line="120" selection-start-column="51" selection-end-line="120" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1563#1719#0" expanded="true" />
+            <element signature="e#1718#1719#0" expanded="true" />
+            <element signature="e#2977#3139#0" expanded="true" />
+            <element signature="e#3138#3139#0" expanded="true" />
           </folding>
         </state>
       </provider>

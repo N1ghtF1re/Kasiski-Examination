@@ -2,6 +2,7 @@ package men.brakh.kasiski;
 
 
 
+import javax.swing.*;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -108,7 +109,7 @@ public class Kasiski {
         return maxNumber;
     }
 
-    public void progressiveTest() {
+    public int progressiveTest(JProgressBar progressBar2) {
         ArrayList<Integer> lineRepeat = new ArrayList();
         for (int i = 0; i < text.length() - digramLength + 1; i++) { // Ищем одинаковые n-звучия (n символов, которые повторяюстя на протяжении текста
             String subStr1 = text.substring(i, i + digramLength);
@@ -127,6 +128,9 @@ public class Kasiski {
                 System.out.println(getMaxProgressivePairsRepeated());
             lineRepeat.add(getMaxProgressivePairsRepeated());
             progressivePairs.clear();
+            if(progressBar2 != null) {
+                progressBar2.setValue((int) (((float)i / (float)(text.length() - digramLength + 1))*100));
+            }
         }
         for (int j = 0; j < lineRepeat.size(); j++) {
             //System.out.println(progressivePairs.get(j).getLength());
@@ -144,13 +148,18 @@ public class Kasiski {
             Map.Entry<Integer, Integer> max = (Map.Entry<Integer, Integer>) sortedGcd.get(i);
             System.out.println("Наиболее вероятный ключ: " + max.getKey());
         }
+        if(sortedGcd.size() == 0) {
+            return 1;
+        }
+        Map.Entry<Integer, Integer> max = (Map.Entry<Integer, Integer>) sortedGcd.get(0);
+        return max.getKey();
     }
 
     public static void main (String[] args) throws IOException {
         String mem = shiftStrings("АБВ");
         String text = new String(Files.readAllBytes(Paths.get("output.txt")));
         Kasiski kasiski = new Kasiski(text, 3);
-        kasiski.progressiveTest();
+        kasiski.progressiveTest(null);
 
     }
 }
