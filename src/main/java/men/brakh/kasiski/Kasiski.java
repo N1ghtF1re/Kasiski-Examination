@@ -10,14 +10,42 @@ import java.util.*;
 
 public class Kasiski {
     private static String alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
-    private String text;
-    private int digramLength;
+    private String text; // Исходный текст
+    private int digramLength; // Размер l-грамм для поиска
 
     private ArrayList<ProgressivePair> progressivePairs = new ArrayList<>();
 
     private ArrayList<Integer> repeatCount = new ArrayList<Integer>();
     private HashMap<Integer, Integer> gcds = new HashMap<Integer, Integer>();
 
+
+    /**
+     * Касиски с алфавитом по-умолчанию (русский)
+     * @param text текст
+     * @param digramLength размер l-грамм
+     */
+    public Kasiski(String text, int digramLength) {
+        this.text = text;
+        this.digramLength = digramLength;
+    }
+
+    /**
+     * Касиски с заданным алфавитом
+     * @param text текст
+     * @param digramLength размер l-грамм
+     * @param alphabet алфавит в строке. Пример: "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ"
+     */
+    public Kasiski(String text, int digramLength, String alphabet) {
+        this.text = text;
+        this.digramLength = digramLength;
+        this.alphabet = alphabet;
+    }
+
+
+    /**
+     * Добавление наименьшего общего делителя вв хеш-таблицу
+     * @param gcd НОД
+     */
     void addGCD(int gcd) {
         if(gcds.containsKey(gcd)) {
             gcds.put(gcd, gcds.get(gcd)+1);
@@ -26,29 +54,10 @@ public class Kasiski {
         }
     }
 
-
-    public Kasiski(String text, int digramLength) {
-        this.text = text;
-        this.digramLength = digramLength;
-    }
-
-
-    public static int gcd(int a,int b) {
-        while (b !=0) {
-            int tmp = a%b;
-            a = b;
-            b = tmp;
-        }
-        return a;
-    }
-
-    public static int min(int a, int b) {
-        if (a < b) {
-            return a;
-        }
-        return b;
-    }
-
+    /**
+     * Презобразование hash-map в отсортированный список
+     * @return отспортированный список
+     */
     public ArrayList getSortedGCDs() {
         ArrayList list = new ArrayList(gcds.entrySet());
         Collections.sort(list, new Comparator<Map.Entry<Integer, Integer>>() {
@@ -60,27 +69,11 @@ public class Kasiski {
         return list;
     }
 
-    public void test() {
-        for (int i = 0; i < text.length() - digramLength + 1; i++) { // Ищем одинаковые n-звучия (n символов, которые повторяюстя на протяжении текста
-            String subStr1 = text.substring(i, i + digramLength);
-            for (int j = i+1; j < text.length() - digramLength + 1; j++) {
-                String subStr2 = text.substring(j, j + digramLength);
-                if(subStr1.equals(subStr2)) {
-                    repeatCount.add(j-i); // И добавляем расстояние между ними в список
-                }
-            }
-        }
-
-        for(int i = 0; i < repeatCount.size(); i++) {
-            for(int j = i + 1; j < repeatCount.size(); j++) {
-                addGCD(gcd(repeatCount.get(i), repeatCount.get(j))); // Находим НОДы всех расстояний
-            }
-        }
-        ArrayList sortedGcd = getSortedGCDs();
-        Map.Entry<Integer, Integer> max = (Map.Entry<Integer, Integer>) sortedGcd.get(0);
-        System.out.println("Наиболее вероятный ключ: " + max.getKey());
-    }
-
+    /**
+     * Сдвиг строки на одну позицию (Цезарь с ключем = 1)
+     * @param str строка
+     * @return "сдвинутая" строка
+     */
     public static String shiftStrings(String str) {
         StringBuilder newStr = new StringBuilder(str);
         for(int i = 0; i < newStr.length(); i++) {
@@ -91,6 +84,10 @@ public class Kasiski {
     }
 
 
+    /**
+     * Получение расстояния, повторяющегося больше всего в текущей итерации прогрессивных пар
+     * @return расстояние, повторяющееся больше всего в текущей итерации прогрессивных пар
+     */
     private int getMaxProgressivePairsRepeated() {
         int maxCount = -1;
         int maxNumber = 0;
@@ -109,9 +106,36 @@ public class Kasiski {
         return maxNumber;
     }
 
+
+    /**
+     * Классический тест Касиски
+     * @return  Наиболее вероятный ключ
+     */
+    public int test() {
+        for (int i = 0; i < text.length() - digramLength + 1; i++) { // Ищем одинаковые n-звучия (n символов, которые повторяюстя на протяжении текста
+            String subStr1 = text.substring(i, i + digramLength);
+            for (int j = i+1; j < text.length() - digramLength + 1; j++) {
+                String subStr2 = text.substring(j, j + digramLength);
+                if(subStr1.equals(subStr2)) {
+                    repeatCount.add(j-i); // И добавляем расстояние между ними в список
+                }
+            }
+        }
+
+        for(int i = 0; i < repeatCount.size(); i++) {
+            for(int j = i + 1; j < repeatCount.size(); j++) {
+                addGCD(KasiskiMath.gcd(repeatCount.get(i), repeatCount.get(j))); // Находим НОДы всех расстояний
+            }
+        }
+        ArrayList sortedGcd = getSortedGCDs();
+        Map.Entry<Integer, Integer> max = (Map.Entry<Integer, Integer>) sortedGcd.get(0);
+        return max.getKey();
+    }
+
+
     public int progressiveTest(JProgressBar progressBar2) {
         ArrayList<Integer> lineRepeat = new ArrayList();
-        for (int i = 0; i < text.length() - digramLength + 1; i++) { // Ищем одинаковые n-звучия (n символов, которые повторяюстя на протяжении текста
+        for (int i = 0; i < text.length() - digramLength + 1; i++) { // Ищем одинаковые n-звучия (n символов, которые повторяюстя на протяжении текста)
             String subStr1 = text.substring(i, i + digramLength);
             int predI = i;
             for (int j = i + 1; j < text.length() - digramLength + 1; j++) {
@@ -119,23 +143,24 @@ public class Kasiski {
                 String comparedSubStr = shiftStrings(subStr1);
                 for(int k = 1; k < alphabet.length(); k++) {
                     if(comparedSubStr.equals(subStr2)) {
-                        progressivePairs.add(new ProgressivePair(predI, j, k));
+                        progressivePairs.add(new ProgressivePair(predI, j, k)); // Добавляем прогрессивные пары
                     }
                     comparedSubStr = shiftStrings(comparedSubStr);
                 }
             }
             if(getMaxProgressivePairsRepeated() > 0)
-                System.out.println(getMaxProgressivePairsRepeated());
-            lineRepeat.add(getMaxProgressivePairsRepeated());
-            progressivePairs.clear();
+                System.out.println(getMaxProgressivePairsRepeated()); // Из найденных прогрессивных пар определяем максимально повторяющуюся длину
+            lineRepeat.add(getMaxProgressivePairsRepeated()); // Эту длину добавляем в отдельный список
+            progressivePairs.clear(); // и отчищаем список прогрессивных пар
             if(progressBar2 != null) {
+                // Если отрисовка из гуишки и там есть прогрессбар - обновляем его
                 progressBar2.setValue((int) (((float)i / (float)(text.length() - digramLength + 1))*100));
             }
         }
+
         for (int j = 0; j < lineRepeat.size(); j++) {
-            //System.out.println(progressivePairs.get(j).getLength());
             for(int k = j+1; k < lineRepeat.size(); k++){
-                int currGcd = gcd(lineRepeat.get(j), lineRepeat.get(k));
+                int currGcd = KasiskiMath.gcd(lineRepeat.get(j), lineRepeat.get(k));
                 if ((currGcd > 1))
                     addGCD(currGcd);
             }
