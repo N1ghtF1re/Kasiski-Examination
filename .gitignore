@@ -2,3 +2,5 @@
 *.iml
 target/
 output/
+input.txt
+output.txt
