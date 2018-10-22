@@ -108,7 +108,7 @@ public class KasiskiFrame extends JFrame {
                 e.printStackTrace();
             }
             Kasiski kasiski = new Kasiski(text, 3);
-            int key = kasiski.progressiveTest(progressBar2);
+            int key = kasiski.progressiveTest(/*progressBar2*/);
             progressBar2.setValue(100);
             dialogMSG("Cryptotext analysis was performed.\nEstimated key length = " + key, "Success");
         }
