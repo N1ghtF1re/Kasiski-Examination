@@ -4,14 +4,13 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import javax.swing.*;
 
-public class KasiskiFrame extends JFrame {
+public class ProgressiveKasiskiDemoFrame extends JFrame {
 
     static private int BOR = 10;
     private static final JProgressBar progressBar2 = new JProgressBar();
@@ -108,7 +107,8 @@ public class KasiskiFrame extends JFrame {
                 e.printStackTrace();
             }
             Kasiski kasiski = new Kasiski(text, 3);
-            int key = kasiski.progressiveTest(/*progressBar2*/);
+
+            int key = kasiski.progressiveTest(progressBar2);
             progressBar2.setValue(100);
             dialogMSG("Cryptotext analysis was performed.\nEstimated key length = " + key, "Success");
         }

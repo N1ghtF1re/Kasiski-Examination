@@ -33,6 +33,11 @@ public class GcdsTable {
         return list;
     }
 
+    /**
+     * Получение первых N по повторениям НОДов
+     * @param n число N
+     * @return первые N по повторениям НОДов (первых по вероятностей ключей)
+     */
     public int[] getFirstNKeys(int n) {
         ArrayList<Map.Entry<Integer, Integer> > sortedGcd = getSortedGCDs();
 
@@ -44,6 +49,10 @@ public class GcdsTable {
         return firstNKeys;
     }
 
+    /**
+     * Получение наиболее вероятного ключ
+     * @return наиболее вероятный ключ
+     */
     public int getFirstKey(){
         return getFirstNKeys(1)[0];
     }

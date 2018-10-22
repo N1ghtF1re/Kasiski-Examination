@@ -4,11 +4,13 @@ import men.brakh.kasiski.KasiskiMath;
 import men.brakh.kasiski.ProgressivePair;
 import men.brakh.kasiski.kasiskiTests.KasiskiTest;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProgressiveKasiskiTest extends KasiskiTest {
     private String alphabet;
+    private JProgressBar additinalBar = null;
 
     /**
      * Повторения прогрессивных пар
@@ -19,6 +21,10 @@ public class ProgressiveKasiskiTest extends KasiskiTest {
     public ProgressiveKasiskiTest(String text, int lgrammsLength, String alphabet) {
         super(text, lgrammsLength);
         this.alphabet = alphabet;
+    }
+
+    public void setProgressBar(JProgressBar jProgressBar) {
+        this.additinalBar = jProgressBar;
     }
 
     /**
@@ -57,6 +63,10 @@ public class ProgressiveKasiskiTest extends KasiskiTest {
         return maxNumber;
     }
 
+    /**
+     * Получение списка, каждый элемент которого - наиболее повторяющееся расстояние на i-ой итерации
+     * @return Список наиболее вероятных расстояний
+     */
     private ArrayList<Integer> getFillLineRepeats() {
         ArrayList<Integer> lineRepeat = new ArrayList();
         for (int i = 0; i < text.length() - lgrammsLength + 1; i++) { // Ищем одинаковые n-звучия (n символов, которые повторяюстя на протяжении текста)
@@ -76,14 +86,18 @@ public class ProgressiveKasiskiTest extends KasiskiTest {
                 System.out.println(getMaxProgressivePairsRepeated()); // Из найденных прогрессивных пар определяем максимально повторяющуюся длину
             lineRepeat.add(getMaxProgressivePairsRepeated()); // Эту длину добавляем в отдельный список
             progressivePairs.clear(); // и отчищаем список прогрессивных пар
-            /*if(progressBar2 != null) {
+            if(additinalBar != null) {
                 // Если отрисовка из гуишки и там есть прогрессбар - обновляем его
-                progressBar2.setValue((int) (((float)i / (float)(text.length() - digramLength + 1))*100));
-            }*/
+                additinalBar.setValue((int) (((float)i / (float)(text.length() - lgrammsLength + 1))*100));
+            }
         }
         return lineRepeat;
     }
 
+    /**
+     * Заполнение таблицы НОДов на основе наиболее вероятных расстояний
+     * @param lineRepeats Наиболее вероятные расстояния
+     */
     private void searchRepeatsGcd(List<Integer> lineRepeats) {
         for (int j = 0; j < lineRepeats.size(); j++) {
             for(int k = j+1; k < lineRepeats.size(); k++){
@@ -95,13 +109,17 @@ public class ProgressiveKasiskiTest extends KasiskiTest {
         progressivePairs.clear();
     }
 
+    /**
+     * Тест Касиски для прогрессивного ключа
+     * @return наиболее вероятный ключ
+     */
     @Override
     public int test() {
         List<Integer> lineRepeats = getFillLineRepeats();
         searchRepeatsGcd(lineRepeats);
 
         if(gcdsTable.size() == 0) {
-            return 1;
+            return 0;
         }
 
         return gcdsTable.getFirstKey();

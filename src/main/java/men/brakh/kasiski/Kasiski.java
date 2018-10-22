@@ -70,19 +70,24 @@ public class Kasiski {
         return kasiskiTest.test();
     }
 
+    /**
+     * Тест Касиски для прогрессивного ключа
+     * @return Наиболее вероятный ключ
+     */
     public int progressiveTest() {
         KasiskiTest kasiskiTest = new ProgressiveKasiskiTest(text, lgrammlength, alphabet);
         return kasiskiTest.test();
     }
 
-
-
-
-    public static void main (String[] args) throws IOException {
-        String mem = shiftStrings("АБВ");
-        String text = new String(Files.readAllBytes(Paths.get("output.txt")));
-        Kasiski kasiski = new Kasiski(text, 3);
-        kasiski.progressiveTest();
-
+    /**
+     * Тест Касиски для прогрессивного ключа (С привязкой к прогресс-бару)
+     * @param progressBar Прогресс-бар
+     * @return Наиболее вероятный ключ
+     */
+    public int progressiveTest(JProgressBar progressBar) {
+        KasiskiTest kasiskiTest = new ProgressiveKasiskiTest(text, lgrammlength, alphabet);
+        ((ProgressiveKasiskiTest) kasiskiTest).setProgressBar(progressBar);
+        return kasiskiTest.test();
     }
+    
 }
