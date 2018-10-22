@@ -7,10 +7,6 @@ import men.brakh.kasiski.kasiskiTests.impl.ClassicKasiskiTest;
 import men.brakh.kasiski.kasiskiTests.impl.ProgressiveKasiskiTest;
 
 import javax.swing.*;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.*;
 
 public class Kasiski {
     private static String alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";
@@ -42,7 +38,6 @@ public class Kasiski {
     }
 
 
-
     /**
      * Сдвиг строки на одну позицию (Цезарь с ключем = 1)
      * @param str строка
@@ -56,9 +51,6 @@ public class Kasiski {
         }
         return newStr.toString();
     }
-
-
-
 
 
     /**
@@ -89,5 +81,5 @@ public class Kasiski {
         ((ProgressiveKasiskiTest) kasiskiTest).setProgressBar(progressBar);
         return kasiskiTest.test();
     }
-    
+
 }
