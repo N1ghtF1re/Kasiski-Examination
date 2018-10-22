@@ -1,13 +1,11 @@
-package men.brakh.kasiski.model;
+package men.brakh.kasiski;
 
 
 
 import javafx.scene.control.ProgressBar;
-import men.brakh.kasiski.model.kasiskiTests.KasiskiTest;
-import men.brakh.kasiski.model.kasiskiTests.impl.ClassicKasiskiTest;
-import men.brakh.kasiski.model.kasiskiTests.impl.ProgressiveKasiskiTest;
-
-import javax.swing.*;
+import men.brakh.kasiski.kasiskiTests.KasiskiTest;
+import men.brakh.kasiski.kasiskiTests.impl.ClassicKasiskiTest;
+import men.brakh.kasiski.kasiskiTests.impl.ProgressiveKasiskiTest;
 
 public class Kasiski {
     private static String alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";

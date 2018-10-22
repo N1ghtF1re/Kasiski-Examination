@@ -1,4 +1,4 @@
-package men.brakh.kasiski.model;
+package men.brakh.kasiski;
 
 public class ProgressivePair {
     private static String alphabet = "АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ";

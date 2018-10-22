@@ -1,9 +1,9 @@
-package men.brakh.kasiski.model.kasiskiTests.impl;
+package men.brakh.kasiski.kasiskiTests.impl;
 
 import javafx.scene.control.ProgressBar;
-import men.brakh.kasiski.model.KasiskiMath;
-import men.brakh.kasiski.model.ProgressivePair;
-import men.brakh.kasiski.model.kasiskiTests.KasiskiTest;
+import men.brakh.kasiski.KasiskiMath;
+import men.brakh.kasiski.kasiskiTests.KasiskiTest;
+import men.brakh.kasiski.ProgressivePair;
 
 import java.util.ArrayList;
 import java.util.List;

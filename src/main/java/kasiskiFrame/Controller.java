@@ -1,4 +1,4 @@
-package men.brakh.kasiski;
+package kasiskiFrame;
 
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -8,7 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.control.TextArea;
 import javafx.stage.FileChooser;
-import men.brakh.kasiski.model.Kasiski;
+import men.brakh.kasiski.Kasiski;
 
 import java.io.File;
 import java.io.IOException;
