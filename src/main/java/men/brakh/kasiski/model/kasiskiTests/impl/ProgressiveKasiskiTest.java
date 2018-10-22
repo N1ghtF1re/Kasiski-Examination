@@ -1,16 +1,16 @@
-package men.brakh.kasiski.kasiskiTests.impl;
+package men.brakh.kasiski.model.kasiskiTests.impl;
 
-import men.brakh.kasiski.KasiskiMath;
-import men.brakh.kasiski.ProgressivePair;
-import men.brakh.kasiski.kasiskiTests.KasiskiTest;
+import javafx.scene.control.ProgressBar;
+import men.brakh.kasiski.model.KasiskiMath;
+import men.brakh.kasiski.model.ProgressivePair;
+import men.brakh.kasiski.model.kasiskiTests.KasiskiTest;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ProgressiveKasiskiTest extends KasiskiTest {
     private String alphabet;
-    private JProgressBar additinalBar = null;
+    private ProgressBar additinalBar = null;
 
     /**
      * Повторения прогрессивных пар
@@ -23,7 +23,7 @@ public class ProgressiveKasiskiTest extends KasiskiTest {
         this.alphabet = alphabet;
     }
 
-    public void setProgressBar(JProgressBar jProgressBar) {
+    public void setProgressBar(ProgressBar jProgressBar) {
         this.additinalBar = jProgressBar;
     }
 
@@ -88,7 +88,8 @@ public class ProgressiveKasiskiTest extends KasiskiTest {
             progressivePairs.clear(); // и отчищаем список прогрессивных пар
             if(additinalBar != null) {
                 // Если отрисовка из гуишки и там есть прогрессбар - обновляем его
-                additinalBar.setValue((int) (((float)i / (float)(text.length() - lgrammsLength + 1))*100));
+                additinalBar.progressProperty().setValue(((float)i / (float)(text.length() - lgrammsLength + 1)));
+
             }
         }
         return lineRepeat;

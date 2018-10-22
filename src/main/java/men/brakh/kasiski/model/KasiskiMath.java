@@ -1,4 +1,4 @@
-package men.brakh.kasiski;
+package men.brakh.kasiski.model;
 
 public class KasiskiMath {
     public static int gcd(int a,int b) {

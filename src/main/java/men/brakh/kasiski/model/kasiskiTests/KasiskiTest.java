@@ -1,6 +1,6 @@
-package men.brakh.kasiski.kasiskiTests;
+package men.brakh.kasiski.model.kasiskiTests;
 
-import men.brakh.kasiski.GcdsTable;
+import men.brakh.kasiski.model.GcdsTable;
 
 abstract public class KasiskiTest {
     protected GcdsTable gcdsTable;

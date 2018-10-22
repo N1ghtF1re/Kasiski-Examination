@@ -1,4 +1,4 @@
-package men.brakh.kasiski;
+package men.brakh.kasiski.model;
 
 import java.util.*;
 

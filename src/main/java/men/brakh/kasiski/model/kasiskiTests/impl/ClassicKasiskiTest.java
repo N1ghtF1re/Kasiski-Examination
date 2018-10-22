@@ -1,7 +1,7 @@
-package men.brakh.kasiski.kasiskiTests.impl;
+package men.brakh.kasiski.model.kasiskiTests.impl;
 
-import men.brakh.kasiski.KasiskiMath;
-import men.brakh.kasiski.kasiskiTests.KasiskiTest;
+import men.brakh.kasiski.model.KasiskiMath;
+import men.brakh.kasiski.model.kasiskiTests.KasiskiTest;
 
 import java.util.ArrayList;
 

@@ -1,10 +1,11 @@
-package men.brakh.kasiski;
+package men.brakh.kasiski.model;
 
 
 
-import men.brakh.kasiski.kasiskiTests.KasiskiTest;
-import men.brakh.kasiski.kasiskiTests.impl.ClassicKasiskiTest;
-import men.brakh.kasiski.kasiskiTests.impl.ProgressiveKasiskiTest;
+import javafx.scene.control.ProgressBar;
+import men.brakh.kasiski.model.kasiskiTests.KasiskiTest;
+import men.brakh.kasiski.model.kasiskiTests.impl.ClassicKasiskiTest;
+import men.brakh.kasiski.model.kasiskiTests.impl.ProgressiveKasiskiTest;
 
 import javax.swing.*;
 
@@ -76,7 +77,7 @@ public class Kasiski {
      * @param progressBar Прогресс-бар
      * @return Наиболее вероятный ключ
      */
-    public int progressiveTest(JProgressBar progressBar) {
+    public int progressiveTest(ProgressBar progressBar) {
         KasiskiTest kasiskiTest = new ProgressiveKasiskiTest(text, lgrammlength, alphabet);
         ((ProgressiveKasiskiTest) kasiskiTest).setProgressBar(progressBar);
         return kasiskiTest.test();
